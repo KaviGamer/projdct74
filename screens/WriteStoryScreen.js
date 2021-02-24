@@ -25,9 +25,9 @@ export default class Write extends React.Component {
         storyText: this.state.storyText,
     })
     this.setState({
-        title: '',
-        author: '',
-        story: ''
+      title:'',
+      author:'',
+      story:''
     })
     Toast.show("Congratulations you just wrote a story!",Toast.LONG);
 }
@@ -38,11 +38,11 @@ export default class Write extends React.Component {
           backgroundColor={'#9c8210'}
           centerComponent={{
             text: 'Write A Story',
-            style: { color: '#fff', fontSize: 20 },
+            style: { color: '#fff', fontSize : 20},
           }}
         />
         <TextInput
-        value={title}
+        value={value}
           style={{marginTop: 50,
             width: '80%',
             alignSelf: 'center',
@@ -50,26 +50,41 @@ export default class Write extends React.Component {
             textAlign: 'center',
             borderWidth: 4,
           }}
+          onChangeText={
+            this.setState({
+              title:value
+            })
+          }
           placeholder="Title"
         />
         <TextInput
-        value={author}
+        value={value}
           style={{marginTop: 50,
             width: '80%',
             alignSelf: 'center',
             height: 40,
             textAlign: 'center',
             borderWidth: 4,}}
+            onChangeText={
+              this.setState({
+                author:value
+              })
+            }
           placeholder="Author"
         />
         <TextInput
-        value={story}
+        value={value}
           style={{marginTop: 50,
             width: '80%',
             alignSelf: 'center',
             height: 40,
             textAlign: 'center',
             borderWidth: 4,}}
+            onChangeText={
+              this.setState({
+                story:value
+              })
+            }
           multiline={true}
           placeholder="Write Story"
         />
